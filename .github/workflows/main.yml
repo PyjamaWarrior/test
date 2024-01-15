@@ -9,10 +9,11 @@ jobs:
 
     env:
       MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
+      LANG: ${{ env.LANG }}
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Use Repository Variable
-        run: echo "My variable value is $MY_VARIABLE"
+        run: echo "My variable value is $MY_VARIABLE and $LANG"
