@@ -1,0 +1,13 @@
+Сонечко, [15 січ. 2024 р., 22:18:10]:
+name: CI
+      
+# Controls when the action will run.
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get the output time
+        run: echo '${{ secrets.SECRET_OWASP_DT_KEY }}'
