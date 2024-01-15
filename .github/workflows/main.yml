@@ -4,9 +4,15 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  example-job:
     runs-on: ubuntu-latest
+
+    env:
+      MY_VARIABLE: ${{ secrets.MY_VARIABLE }}
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Get the output time
-        run: echo '${{ secrets.SECRET_OWASP_DT_KEY }}'
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Use Repository Variable
+        run: echo "My variable value is $MY_VARIABLE"
