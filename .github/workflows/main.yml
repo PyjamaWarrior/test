@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_VARIABLE: ${{ env.LANG }}
+      MY_VARIABLE: ${{ vars.LANG }}
 
     steps:
       - name: Checkout Repository
